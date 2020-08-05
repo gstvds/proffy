@@ -8,7 +8,7 @@
 ## Aulas
 
 - [x] Rota para criar uma nova aula;
-- [] Rota para listar aulas;
-  - [] Filtrar por matéria;
-  - [] Filtrar por dia da semana;
-  - [] Filtrar por horário;
+- [x] Rota para listar aulas;
+  - [x] Filtrar por matéria;
+  - [x] Filtrar por dia da semana;
+  - [x] Filtrar por horário;
