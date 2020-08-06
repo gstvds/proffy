@@ -3,6 +3,8 @@ import { View, Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
+import { STUDY_PAGE, GIVE_CLASSES_PAGE } from '../../routes';
+
 import landingImg from '../../assets/images/landing.png';
 import studyIcon from '../../assets/images/icons/study.png';
 import giveClassesIcon from '../../assets/images/icons/give-classes.png';
@@ -14,11 +16,11 @@ const Landing: React.FC = () => {
   const navigation = useNavigation();
 
   function handleNavigateToGiveClassesPage() {
-    navigation.navigate('GiveClasses');
+    navigation.navigate(GIVE_CLASSES_PAGE);
   }
 
   function handleNavigateToStudyPages() {
-    navigation.navigate('Study');
+    navigation.navigate(STUDY_PAGE);
   }
 
   return (
