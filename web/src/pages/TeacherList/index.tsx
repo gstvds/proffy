@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 
 import './styles.css';
-import TeacherItem from '../../components/TeacherItem';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+import api from '../../services/api';
+
 
 function TeacherList() {
+  const [subject, setSubject] = useState('');
+  const [week_day, setWeekDay] = useState('');
+  const [time, setTime] = useState('');
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
+
+  async function searchTeachers(event: FormEvent) {
+    event.preventDefault();
+
+    const response = await api.get<Teacher[]>('classes', {
+      params: {
+        week_day,
+        subject,
+        time,
+      }
+    });
+
+    setTeachers(response.data);
+  }
+
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="Estes são os proffys disponíveis.">
-        <form id="search-teachers">
+        <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
             options={[
               { value: 'Química', label: 'Química' },
@@ -25,6 +46,8 @@ function TeacherList() {
               { value: 'Educação Física', label: 'Educação Física' },
               { value: 'Artes', label: 'Artes' },
             ]}
+            onChange={event => setSubject(event.target.value)}
+            value={subject}
             label="Matéria"
             name="subject"
           />
@@ -38,17 +61,28 @@ function TeacherList() {
               { value: '5', label: 'Sexta-feira' },
               { value: '6', label: 'Sábado' },
             ]}
+            onChange={event => setWeekDay(event.target.value)}
+            value={week_day}
             label="Dia da semana"
             name="week_day"
           />
-          <Input label="Hora" name="time" type="time" />
+          <Input
+            label="Hora"
+            name="time"
+            type="time"
+            onChange={event => setTime(event.target.value)}
+            value={time}
+          />
+          <button type="submit">
+            Buscar
+          </button>
         </form>
       </PageHeader>
 
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map(teacher => (
+          <TeacherItem key={teacher.user_id} teacher={teacher} />
+        ))}
       </main>
     </div>
   )
