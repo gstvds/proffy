@@ -25,8 +25,8 @@ const StudyTabs: React.FC = () => {
         },
         iconStyle: {
           flex: 0,
-          width: 20,
-          height: 20,
+          width: 22,
+          height: 22,
         },
         labelStyle: {
           fontFamily: fonts.archivo_bold,
@@ -44,8 +44,8 @@ const StudyTabs: React.FC = () => {
         component={TeacherList}
         options={{
           tabBarLabel: 'Proffys',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-easel" color={color} size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name="ios-easel" color={focused ? colors.primary : color} size={size} />
           )
         }}
       />
@@ -54,8 +54,8 @@ const StudyTabs: React.FC = () => {
         component={Favorites}
         options={{
           tabBarLabel: 'Favoritos',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-heart" color={color} size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name="ios-heart" color={focused ? colors.primary : color} size={size} />
           )
         }}
       />
