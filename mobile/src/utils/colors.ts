@@ -15,6 +15,8 @@ export default {
   line_in_white: '#E6E6F0',
   input_background: '#F8F8FC',
   button_text: '#FFFFFF',
-  box_base: '#FFFFFF',
-  box_footer: '#FAFAFC',
+  inactive_tab: '#FAFAFC',
+  inactive_text_tab: '#C1BCCC',
+  active_text_tab: '#32264D',
+  active_tab: '#EBEBF5',
 }
