@@ -13,17 +13,15 @@ const Favorites: React.FC = () => {
         title="Meus proffys favoritos"
       />
 
-<ScrollView
-      style={styles.teacherList}
-      contentContainerStyle={{
-        paddingHorizontal: 16,
-        paddingBottom: 16,
-      }}
-    >
-      <TeacherItem />
-      <TeacherItem />
-      <TeacherItem />
-    </ScrollView>
+      <ScrollView
+        style={styles.teacherList}
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          paddingBottom: 16,
+        }}
+      >
+        <TeacherItem />
+      </ScrollView>
     </View>
   )
 };
