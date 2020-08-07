@@ -13,6 +13,8 @@ export default {
   text_complement: '#9C98A6',
   text_base: '#6A6180',
   line_in_white: '#E6E6F0',
+  card_background: '#FFFFFF',
+  image_background: '#EEEEEE',
   input_background: '#F8F8FC',
   button_text: '#FFFFFF',
   inactive_tab: '#FAFAFC',
