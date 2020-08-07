@@ -21,4 +21,5 @@ export default {
   inactive_text_tab: '#C1BCCC',
   active_text_tab: '#32264D',
   active_tab: '#EBEBF5',
+  favorited_background: '#e33d3d',
 }
