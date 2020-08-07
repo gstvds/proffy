@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   contactButton: {
     backgroundColor: colors.secondary,
     flex: 1,
+    height: 56,
     flexDirection: 'row',
     borderRadius: 8,
     justifyContent: 'center',
